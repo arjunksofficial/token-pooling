@@ -12,7 +12,7 @@ services:
         - ./database.sql:/docker-entrypoint-initdb.d/database.sql
         environment:
             - POSTGRES_USER=postgres
-            - POSTGRES_DBNAME=ugc   
+            - POSTGRES_DBNAME=token   
             - POSTGRES_PASSWORD=mypass
             - POSTGRES_PORT=5432
         container_name: ${APPLICATION}-db
