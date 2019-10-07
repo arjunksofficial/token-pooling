@@ -1,0 +1,4 @@
+development:
+    driver: postgres
+    open: host='$DB_MASTER_HOST' port='$DB_PORT' user='$DB_MASTER_USER' password='$DB_MASTER_PASSWORD' dbname='$DB_NAME' sslmode=disable
+    dbversion: 20191007191923

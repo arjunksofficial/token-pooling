@@ -1,0 +1,18 @@
+version: '3'
+volumes:
+    data-vol: # Volume to host db service data locally.
+        driver: 'local'
+services: 
+    db:
+        image: ${DB_IMAGE}
+        ports:
+            - "5432:5432"
+        volumes:
+        - data-vol:/var/lib/postgresql/data
+        - ./database.sql:/docker-entrypoint-initdb.d/database.sql
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_DBNAME=ugc   
+            - POSTGRES_PASSWORD=mypass
+            - POSTGRES_PORT=5432
+        container_name: ${APPLICATION}-db
